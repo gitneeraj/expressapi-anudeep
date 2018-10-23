@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Single page web app using Angularjs</title>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+		    
+		    <label>Email Id </label>
+		    <div class="form-group pass_show"> 
+                <input type="text" class="form-control emailid" value="anu1488@gmail.com" placeholder="emailid"> 
+            </div> 
+            
+            <label>Subject </label>
+		    <div class="form-group pass_show"> 
+                <input type="text" class="form-control subject" placeholder="subject"> 
+            </div> 
+                        
+		    <label>Message</label>
+            <div class="form-group pass_show"> 
+                <input type="text" class="form-control message" placeholder="Message"> 
+            </div> 
+            <button class="send">Send</button>
+           
+		</div>  
+	</div>
+</div>
+<script>
+$('.send').click(function(){
+	$.ajax({
+	  type: "POST",
+	  url: "sendmail",
+	  data: {'emailid' : $('.emailid').val() , 'message' : $('.message').val(), 'subject' : $('.subject').val() },
+	  cache: false,
+	  success: function(data){
+	     console.log('success .........');
+	  }
+	});
+});
+
+</script>
+</body>
+</html>
