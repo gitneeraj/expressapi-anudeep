@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile("/index.html");
 });
 
 app.get('/getval', (req, res) => {
@@ -79,14 +79,14 @@ app.get('/tofile/:eamilid/:status/:mailid', (req, res) => {
 	
 	
     
-  	res.sendFile(__dirname + "/img/image.png");
+  	res.sendFile("/img/image.png");
 	
 });
 
 app.get('/readfile', (req, res) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	res.sendFile(__dirname + "/data.json");
+	res.sendFile("/data.json");
 });
 
 app.post('/sendmail', (req, res) => {
