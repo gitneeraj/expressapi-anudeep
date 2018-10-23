@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
 	console.log('App started')
-  res.sendFile(__dirname + "/index.html");
+  //res.sendFile(__dirname + "/index.html");
 });
 
 app.get('/getval', (req, res) => {
